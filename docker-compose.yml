@@ -1,0 +1,7 @@
+version: '3'
+services:
+  web:
+    image: bkimminich/juice-shop:latest
+    container_name: wojs_web
+    ports:
+      - "3000:3000"
