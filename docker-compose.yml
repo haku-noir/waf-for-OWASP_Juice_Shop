@@ -1,0 +1,23 @@
+version: '3'
+services:
+  waf:
+    image: node:10
+    container_name: wojs_waf
+    ports:
+      - "80:80"
+    volumes:
+      - ./waf:/waf
+    working_dir: /waf
+    command: bash
+    tty: true
+    links:
+      - web
+    environment:
+      - PORT=80
+      - WEB_HOST=web
+      - WEB_PORT=3000
+  web:
+    image: bkimminich/juice-shop:latest
+    container_name: wojs_web
+    ports:
+      - "3000:3000"
