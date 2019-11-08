@@ -1,5 +1,6 @@
 var http = require('http');
 var httpProxy = require('http-proxy');
+var checker = require('./my_modules/checker');
 var logger = require('./my_modules/logger');
 var rd = require('./remote_data');
 
@@ -9,6 +10,7 @@ var port = process.env.PORT || 80;
 function requestHandler(req, res) {
   logger.printPathname(req);
   logger.printQuery(req);
+  console.log(checker.check(req));
 
   res.setHeader('Access-Control-Allow-Origin', '*');
   proxy.web(req, res, {target: rd.server});

@@ -1,13 +1,20 @@
 const checkers = {};
 
 const check = (req) => {
-  checkers.forEach((checker) => {
+  let attack = false;
+
+  Object.keys(checkers).some((key) => {
+    let checker = checkers[key];
+
     if(checker(req)){
-      return true;
+      attack = true;
+      return attack;
     }
+
+    return attack;
   });
 
-  return false;
+  return attack;
 };
 
 module.exports = {
