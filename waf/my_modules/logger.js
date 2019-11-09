@@ -6,6 +6,7 @@ const printURL = (req) => {
 
 const printPathname = (req) => {
   let url_parse = url.parse(req.url, true);
+  if(url_parse.pathname === '/search/socket.io/') console.log("AAAAAAAAAAAAAAAAAAAAAAAA");
   console.log(`${req.method} ${url_parse.pathname}`);
 }
 
