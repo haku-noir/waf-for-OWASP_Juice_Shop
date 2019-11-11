@@ -3,7 +3,8 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./proxy.js"
+    "start": "node ./proxy.js",
+    "setup": "node ./datas/csv-to-js.js"
   },
   "dependencies": {
     "csv": "^5.1.3",

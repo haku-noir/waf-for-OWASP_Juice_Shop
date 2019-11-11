@@ -1,0 +1,7 @@
+[
+  {
+    "pathname": "/rest/products/search",
+    "query": "q",
+    "value": "'"
+  }
+]
