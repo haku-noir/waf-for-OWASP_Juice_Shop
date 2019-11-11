@@ -2,7 +2,7 @@ var http = require('http');
 var httpProxy = require('http-proxy');
 var checker = require('./my_modules/checker');
 var logger = require('./my_modules/logger');
-var rd = require('./remote_data');
+var rd = require('./datas/remote_data');
 
 var proxy = httpProxy.createProxyServer();
 var port = process.env.PORT || 80;
