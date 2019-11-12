@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "start": "node ./proxy.js",
-    "setup": "node ./datas/csv-to-js.js"
+    "setup": "node ./datas/csv-to-json.js"
   },
   "dependencies": {
     "csv": "^5.1.3",
