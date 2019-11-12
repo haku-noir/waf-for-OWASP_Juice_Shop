@@ -1,13 +1,21 @@
 var url = require('url');
 
 const queryChecker = (req) => {
+  let check_items = require('../datas/query-check.json');
   let url_parse = url.parse(req.url, true);
 
-  if(url_parse.pathname === "/rest/products/search"
-      && url_parse.query["q"].indexOf("'") !== -1){
-    return true;
-  }
-  return false;
+  let attack = false;
+  check_items.forEach((check_item) => {
+    console.log(check_item);
+    if(url_parse.pathname === check_item.pathname
+        && url_parse.query[check_item.query].indexOf(check_item.value) !== -1){
+      attack = true;
+    }
+
+    return attack;
+  });
+
+  return attack;
 }
 
 const checkers = {
@@ -22,7 +30,6 @@ const check = (req) => {
 
     if(checker(req)){
       attack = true;
-      return attack;
     }
 
     return attack;
