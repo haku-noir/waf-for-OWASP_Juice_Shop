@@ -16,11 +16,11 @@ const writeJSON = (file_path, data) => new Promise((resolve) => {
   });
 });
 
-const changeCSVtoJSON = (file_path) => new Promise((resolve) => {
+const changeCSVtoJSON = (file_name) => new Promise((resolve) => {
   Promise.resolve()
-    .then(() => readCSV(file_path))
-    .then((data) => writeJSON(file_path, data))
+    .then(() => readCSV(`${file_name}.csv`))
+    .then((data) => writeJSON(`${file_name}.json`, data))
     .then(() => resolve());
 });
 
-changeCSVtoJSON(__dirname + '/query-check.csv');
+changeCSVtoJSON(__dirname + '/query-check');

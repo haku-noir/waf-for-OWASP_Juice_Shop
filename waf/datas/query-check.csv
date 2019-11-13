@@ -1,7 +1,2 @@
-[
-  {
-    "pathname": "/rest/products/search",
-    "query": "q",
-    "value": "'"
-  }
-]
+pathname,query,value
+/rest/products/search,q,'
