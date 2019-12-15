@@ -1,7 +1,7 @@
-protocol = 'http';
-host = process.env.WEB_HOST;
-port = process.env.WEB_PORT;
-server = `${protocol}://${host}:${port}`;
+const protocol = 'http';
+const host = process.env.WEB_HOST;
+const port = process.env.WEB_PORT;
+const server = `${protocol}://${host}:${port}`;
 
 module.exports = {
   protocol,

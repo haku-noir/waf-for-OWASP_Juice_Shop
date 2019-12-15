@@ -1,12 +1,12 @@
-var http = require('http');
-var httpProxy = require('http-proxy');
-var checker = require('./my_modules/checker');
-var logger = require('./my_modules/logger');
-var rd = require('./datas/remote_data');
+const http = require('http');
+const httpProxy = require('http-proxy');
+const checker = require('./my_modules/checker');
+const logger = require('./my_modules/logger');
+const rd = require('./datas/remote_data');
 
-var port = process.env.PORT || 80;
+const port = process.env.PORT || 80;
 
-var proxy = httpProxy.createProxyServer();
+const proxy = httpProxy.createProxyServer();
 proxy.on('error', (err, req, res) => res.end());
 
 const requestHandler = (req, res) => {

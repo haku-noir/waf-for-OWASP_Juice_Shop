@@ -1,4 +1,4 @@
-var url = require('url');
+const url = require('url');
 
 const queryChecker = req => new Promise((resolve, reject) => {
   let check_items = require('../datas/query-check.json');

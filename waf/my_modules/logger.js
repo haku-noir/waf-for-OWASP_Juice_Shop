@@ -1,4 +1,4 @@
-var url = require('url');
+const url = require('url');
 
 const printURL = (req) => {
   console.log(`${req.method} ${req.url}`);
