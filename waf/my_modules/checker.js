@@ -6,7 +6,7 @@ const queryChecker = (req) => {
 
   let attack = false;
   check_items.forEach((check_item) => {
-    if(url_parse.pathname === check_item.pathname
+    if(url_parse.pathname === check_item.pathname && url_parse.query[check_item.query]
         && url_parse.query[check_item.query].indexOf(check_item.value) !== -1){
       attack = true;
     }
