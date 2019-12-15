@@ -4,8 +4,10 @@ var checker = require('./my_modules/checker');
 var logger = require('./my_modules/logger');
 var rd = require('./datas/remote_data');
 
-var proxy = httpProxy.createProxyServer();
 var port = process.env.PORT || 80;
+
+var proxy = httpProxy.createProxyServer();
+proxy.on('error', (err, req, res) => res.end());
 
 const requestHandler = (req, res) => {
   logger.printPathname(req);
