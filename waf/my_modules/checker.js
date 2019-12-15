@@ -19,10 +19,6 @@ const queryChecker = req => new Promise((resolve, reject) => {
   resolve();
 });
 
-const checkers = {
-  queryChecker
-};
-
 const check = req => new Promise((resolve, reject) => {
   Promise.all([
     queryChecker(req)
@@ -30,6 +26,5 @@ const check = req => new Promise((resolve, reject) => {
 });
 
 module.exports = {
-  checkers,
   check
 }
